@@ -6,7 +6,7 @@ designed to be simple and used in small applications but can
 be scaled up to more complex applications if you so choose. 
 
 Twist wouldn't be possible without the amazing blog posts and tutorials from Jahongir Rahmonov. 
-Make sure to go follow his github here: https://github.com/rahmonov and star a couple of his projects. 
+Make sure to go follow his Github Profile here: https://github.com/rahmonov and star a couple of his projects. 
 I'm sure that would make his day just a little better. The link to his blog post is here: 
 https://rahmonov.me/posts/write-python-framework-part-one/
 
@@ -18,7 +18,7 @@ an example:
 def home(req, resp):
     resp.text = "Hello, How are you?"
 ```
-The example handler above only takes in `GET` requests. No `POST` requests here! Function based handlers
+The example handler above only takes in `GET` requests. No `POST` requests here! Function-based handlers
 can also do the same thing. Take a look at the example below:
 ```python
 @app.route("/", methods=["get"])
@@ -29,7 +29,7 @@ def home(req, resp):
 ## Quick Start
 To be able to use Twist at the moment, you have to download all the files
 locally and play with it from there since there is no pip module for it yet
-(coming very soon!). Many apologies for this inconvience!
+(coming very soon!). Many apologies for this inconvenience!
 
 Example "Hello World" App in Twist:
 ```python
@@ -50,7 +50,7 @@ gunicorn app:app
 ```
 
 ## Templates
-Templates are currently supported in Twist. To find these templates, find the `templates` folder. You can add it to the init class at the begginning of your app like so:
+Templates are currently supported in Twist. To find these templates, find the `templates` folder. You can add it to the init class at the beginning of your app like so:
 ```python
 app = Twist(templates_dir="test.html")
 ```
@@ -62,4 +62,4 @@ def handler_with_template(req, resp):
 ```
 
 ## WIP
-Please keep in mind that this is a work-in-progress and I have no intention of abondoning the project in the future. Feel free to suggest any changes!
+Please keep in mind that this is a work-in-progress and I have no intention of abandoning the project in the future. Feel free to suggest any changes!
