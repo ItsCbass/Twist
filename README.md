@@ -7,7 +7,7 @@ be scaled up to more complex applications if you so choose.
 Twist was made while following a tutrial by Jahongir Rahmonov. 
 The link to his blog posts is here: https://rahmonov.me/posts/write-python-framework-part-one/
 
-### ⚠️ Pip module coming soon! ⚠️
+### Pip module coming soon!
 I haven't had to time get the pip module setup but I will get it up and running very soon!
 
 ### Usage
