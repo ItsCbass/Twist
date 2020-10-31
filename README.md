@@ -1,33 +1,65 @@
+![The Logo](Logo.png)
 # Twist
 
 Twist is a lightweight WSGI web application framework. Its
 designed to be simple and used in small applications but can
 be scaled up to more complex applications if you so choose. 
 
-Twist was made while following a tutrial by Jahongir Rahmonov. 
-The link to his blog posts is here: https://rahmonov.me/posts/write-python-framework-part-one/
+Twist wouldn't be possible without the amazing blog posts and tutorials from Jahongir Rahmonov. 
+Make sure to go follow his github here: https://github.com/rahmonov and star a couple of his projects. 
+I'm sure that would make his day just a little better. The link to his blog post is here: 
+https://rahmonov.me/posts/write-python-framework-part-one/
 
-### Pip module coming soon!
-I haven't had to time get the pip module setup but I will get it up and running very soon!
-
-### Usage
-If you want to use Twist without installing the pip module, 
-you can just download this github repo and do it locally. 
-
-Example App:
+## How does Twist handle handlers?
+Twist uses classed based handlers which can be easily implemented in just a few lines of code. Here's
+an example:
 ```python
+@app.route("/")
+def home(req, resp):
+    resp.text = "Hello, How are you?"
+```
+The example handler above only takes in `GET` requests. No `POST` requests here! Function based handlers
+can also do the same thing. Take a look at the example below:
+```python
+@app.route("/", methods=["get"])
+def home(req, resp):
+    resp.text = "Hello, How are you?"
+```
+
+## Quick Start
+To be able to use Twist at the moment, you have to download all the files
+locally and play with it from there since there is no pip module for it yet
+(coming very soon!). Many apologies for this inconvience!
+
+Example "Hello World" App in Twist:
+```python
+# app.py
 from twist import Twist
 
 app = Twist()
 
-
 @app.route("/")
 def home(req, resp):
-    resp.text = "Hello, this is a home page."
+    resp.text = "Hello World! This is Twist!"
 ```
 
 If you want to deploy this app, I recommend you install
-Gunicorn. Here is how you would deploy that code above
+Gunicorn (Please keep in mind that Gunicorn is Unix only. You may need to use another WSGI service). Here is how you would deploy that code above:
 ```text
 gunicorn app:app
 ```
+
+## Templates
+Templates are currently supported in Twist. To find these templates, find the `templates` folder. You can add it to the init class at the begginning of your app like so:
+```python
+app = Twist(templates_dir="test.html")
+```
+Then, you can use the HTML files in a handler. Like so:
+```python
+@app.route("/show/template")
+def handler_with_template(req, resp):
+    resp.html = app.template("test.html", context={"title": "Twist Framework is so cool!", "body": "Twist - A Python Framework"})
+```
+
+## WIP
+Please keep in mind that this is a work-in-progress and I have no intention of abondoning the project in the future. Feel free to suggest any changes!
