@@ -1,4 +1,4 @@
-![The Logo](Logo.png)
+![The Logo](TwistLogo.png)
 # Twist
 
 Twist is a lightweight WSGI web application framework. Its
