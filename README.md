@@ -26,7 +26,7 @@ def home(req, resp):
     resp.text = "Hello, How are you?"
 ```
 
-## Quick Start
+## The Beginning
 To be able to use Twist at the moment, you have to download all the files
 locally and play with it from there since there is no pip module for it yet
 (coming very soon!). Many apologies for this inconvenience!
@@ -49,7 +49,7 @@ Gunicorn (Please keep in mind that Gunicorn is Unix only. You may need to use an
 gunicorn app:app
 ```
 
-## Templates
+## How does Twist deal with templates?
 Templates are currently supported in Twist. To find these templates, find the `templates` folder. You can add it to the init class at the beginning of your app like so:
 ```python
 app = Twist(templates_dir="test.html")
