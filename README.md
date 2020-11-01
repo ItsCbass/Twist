@@ -1,5 +1,4 @@
 ![The Logo](TLogo.png)
-###
 
 Twist is a lightweight WSGI web application framework. Its
 designed to be simple and used in small applications but can
@@ -9,22 +8,6 @@ Twist wouldn't be possible without the amazing blog posts and tutorials from Jah
 Make sure to go follow his Github Profile here: https://github.com/rahmonov and star a couple of his projects. 
 I'm sure that would make his day just a little better. The link to his blog post is here: 
 https://rahmonov.me/posts/write-python-framework-part-one/
-
-## How does Twist handle handlers?
-Twist uses classed based handlers which can be easily implemented in just a few lines of code. Here's
-an example:
-```python
-@app.route("/")
-def home(req, resp):
-    resp.text = "Hello, How are you?"
-```
-The example handler above only takes in `GET` requests. No `POST` requests here! Function-based handlers
-can also do the same thing. Take a look at the example below:
-```python
-@app.route("/", methods=["get"])
-def home(req, resp):
-    resp.text = "Hello, How are you?"
-```
 
 ## The Beginning
 To be able to use Twist at the moment, you have to download all the files
@@ -47,6 +30,23 @@ If you want to deploy this app, I recommend you install
 Gunicorn (Please keep in mind that Gunicorn is Unix only. You may need to use another WSGI service). Here is how you would deploy that code above:
 ```text
 gunicorn app:app
+```
+Side note: Please install the dependencies! This project will not work as its supposed to without them. If you don't know how to install these, use `pip3 install -r requirements.txt`.
+
+## How does Twist handle handlers?
+Twist uses classed based handlers which can be easily implemented in just a few lines of code. Here's
+an example:
+```python
+@app.route("/")
+def home(req, resp):
+    resp.text = "Hello, How are you?"
+```
+The example handler above only takes in `GET` requests. No `POST` requests here! Function-based handlers
+can also do the same thing. Take a look at the example below:
+```python
+@app.route("/", methods=["get"])
+def home(req, resp):
+    resp.text = "Hello, How are you?"
 ```
 
 ## How does Twist deal with templates?
